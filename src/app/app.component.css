@@ -1,0 +1,13 @@
+.HeaderBody{
+    background-color: grey;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.list{
+    display: flex;
+}
+.list div{
+    padding: 15px;
+    font-size: 20px;
+}

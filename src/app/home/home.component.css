@@ -1,0 +1,64 @@
+.GlobalSearch{
+    width: 100%;
+}
+.GlobalSearch .InputDiv{
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+}
+input[type=text]{
+    width: 100%;
+    height: 35px;
+    padding-left: 10px;
+    border: 1px solid gray;
+}
+input:focus-visible{
+    outline: none;
+}
+
+.body{
+    position: relative;
+}
+.bt{
+    position: absolute;
+    top: 40%;
+}
+.bt button{
+    border: none;
+    background-color: red;
+    border-radius: 50%;
+    height: 40px;
+    width: 40px;
+    color: whitesmoke;
+    cursor: pointer;
+}
+.bt button:hover{
+    background-color: rgb(160, 56, 56);
+}
+.Next{
+    right: 1%;
+}
+.previous{
+    left: 1%;
+    z-index: 1;
+}
+img{
+    width: 100%;
+}
+.Image{
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.addSection{
+    position: relative;
+}
+.pro{
+    position: absolute;
+    top: 0px;
+    right: 30%;
+    height: -webkit-fill-available;
+    object-fit: contain;
+
+}

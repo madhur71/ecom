@@ -1,0 +1,9 @@
+.body div{
+    display: flex;
+}
+.Image{
+    width: 40%;
+}
+.Detail{
+    width: 60%;
+}
