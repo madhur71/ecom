@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService } from '../carousel.service';
+import { ProductsInfoService } from '../products-info.service';
 
 
 @Component({
@@ -10,16 +11,27 @@ import { CarouselService } from '../carousel.service';
 export class HomeComponent implements OnInit {
 
   public carousel:any;
+  public productList:any = [];
   public Img:any;
   public pro:any;
   public nth:number = 0;
+  public bestSeller:any=[] 
 
-  constructor(private _carouselService: CarouselService) { }
+  constructor(private _carouselService: CarouselService , private _productInfoService: ProductsInfoService) { }
 
   ngOnInit(): void {
     this._carouselService.getProducts().subscribe(data => {this.carousel =  data;
       this.Img = this.carousel[0].link;
       this.pro = this.carousel[0].img;
+    });
+
+    this._productInfoService.getProducts().subscribe(data => {
+      this.productList = data;
+      for(var i=0; i < this.productList.length ; i++){
+        if(this.productList[i].BestSeller){
+          this.bestSeller.push(this.productList[i]);
+        }
+      }
     });
   }
 
@@ -43,6 +55,9 @@ export class HomeComponent implements OnInit {
     }
     this.Img = this.carousel[this.nth].link;
     this.pro = this.carousel[this.nth].img;
+  }
+  scroll(){
+    document.getElementById('scroll')?.scrollBy(300,0);
   }
    
   }

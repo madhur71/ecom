@@ -1,16 +1,31 @@
-<p>Routing Works</p>
-
-
-
+<div class="grid">
+    <div class="Filters">
+        <div>
+            <h3>What Are You Looking For?</h3>
+            <ul>
+                <li>
+                    <label> <input type="checkbox"> Mobile </label>
+                </li>
+                <li>
+                    <label> <input type="checkbox"> Laptop </label>
+                </li>
+                <li>
+                    <label> <input type="checkbox"> HeadPhone </label>
+                </li>
+                <li>
+                    <label> <input type="checkbox"> Books </label>
+                </li>
+            </ul>
+        </div>
+    </div>
 <div class="body">
     <div *ngFor="let product of productList;">
-    <div class="Image">
-        <img width="300px" src={{product.link}}>
-    </div>
-    <div class="Detail">
-        {{product.name}}
+        <div class="Image">
+            <img width="300px" src={{product.link}}>
+        </div>
+        <div class="Detail">
+            {{product.name}}
+        </div>
     </div>
 </div>
-</div>
-<div>
 </div>

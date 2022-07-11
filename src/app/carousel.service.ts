@@ -8,7 +8,7 @@ import { ICarousel } from './carouselList';
 })
 export class CarouselService {
 
-  private _url: string = "http://localhost:3000/carousel"
+  private _url: string = "https://my-json-server.typicode.com/madhur71/ecomserver/carousel"
 
   constructor( private http:HttpClient ) { }
 

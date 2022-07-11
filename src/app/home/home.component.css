@@ -57,8 +57,15 @@ img{
 .pro{
     position: absolute;
     top: 0px;
-    right: 30%;
+    right: 13%;
     height: -webkit-fill-available;
     object-fit: contain;
 
+}
+.flex{
+    display: flex;
+    overflow-x: hidden;
+}
+.flex div{
+    width: 25%;
 }

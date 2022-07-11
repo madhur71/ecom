@@ -8,7 +8,7 @@ import { Observable } from 'rxjs';
 })
 export class ProductsInfoService {
 
-  private _url: string = "http://localhost:3000/products"
+  private _url: string = "https://my-json-server.typicode.com/madhur71/ecomserver/products"
 
   constructor(private http:HttpClient) { }
 
