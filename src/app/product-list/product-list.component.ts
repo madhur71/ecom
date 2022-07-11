@@ -9,6 +9,7 @@ import { ProductsInfoService } from '../products-info.service';
 export class ProductListComponent implements OnInit {
 
   public productList:any;
+  public clicked:boolean =true;
 
   constructor(private _productInfoService: ProductsInfoService) { }
 
@@ -17,9 +18,14 @@ export class ProductListComponent implements OnInit {
     // this._productInfoService.postProduct( {id:4,name:"sixth"}).subscribe( data =>  console.log(data));
   }
 
-  public addProduct(){
-    
+  backToAllType(){
+    this.clicked = false;
   }
+  thisType(){
+    this.clicked = true;
+  }
+
+
 
   
 

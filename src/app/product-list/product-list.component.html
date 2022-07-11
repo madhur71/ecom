@@ -1,6 +1,7 @@
+<div *ngIf="clicked" (click)="backToAllType()" > <= Back To All Type</div>
 <div class="grid">
     <div class="Filters">
-        <div>
+        <div *ngIf="!clicked">
             <h3>What Are You Looking For?</h3>
             <ul>
                 <li>
@@ -17,14 +18,70 @@
                 </li>
             </ul>
         </div>
+        <div *ngIf="clicked">
+            <h3>Do You Need More Filter ?</h3>
+            <ul>
+                <li>
+                    <label> <input type="checkbox"> price </label>
+                </li>
+            </ul>
+        </div>
     </div>
 <div class="body">
-    <div *ngFor="let product of productList;">
-        <div class="Image">
-            <img width="300px" src={{product.link}}>
+    <div *ngIf="!clicked">
+        <div class="productSubDiv">
+            <div class="productListImage">
+                <img src="https://cdn.shopify.com/s/files/1/0584/4667/6158/products/atomichabits.png?v=1626257128">
+            </div>
+            <div>
+                <div>Are You Looking For Book ?</div>
+                <div>Check Our Most sold Product</div>
+                <Div>Atomic Habits</Div>
+                <div>price: 200rs</div>
+            </div>
+            <div class="buyNow">
+                <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                </div>
+                <div class="buttonToBuy" (click)="thisType()">
+                    See All =>
+                </div>
+            </div>
         </div>
-        <div class="Detail">
-            {{product.name}}
+        <div class="productSubDiv">
+            <div class="productListImage">
+                <img src="https://cdn.shopify.com/s/files/1/0584/4667/6158/products/atomichabits.png?v=1626257128">
+            </div>
+        </div>
+    </div>
+    <div class="productListDiv" *ngIf="clicked">
+        <div class="productSubDiv">
+            <div class="productListImage">
+                <img src="https://cdn.shopify.com/s/files/1/0584/4667/6158/products/atomichabits.png?v=1626257128">
+            </div>
+            <div>
+                <div>Specification</div>
+            </div>
+            <div class="buyNow">
+                <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                </div>
+                <div class="buttonToBuy">
+                    <button> Add To Cart </button> 
+                    <button>Buy Now</button> 
+                </div>
+            </div>
+        </div>
+        <div class="productSubDiv">
+            <div class="productListImage">
+                <img src="https://cdn.shopify.com/s/files/1/0584/4667/6158/products/atomichabits.png?v=1626257128">
+            </div>
         </div>
     </div>
 </div>
