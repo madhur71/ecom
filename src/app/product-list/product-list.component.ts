@@ -9,7 +9,7 @@ import { ProductsInfoService } from '../products-info.service';
 export class ProductListComponent implements OnInit {
 
   public productList:any;
-  public clicked:boolean =true;
+  public clicked:boolean =false;
 
   constructor(private _productInfoService: ProductsInfoService) { }
 
