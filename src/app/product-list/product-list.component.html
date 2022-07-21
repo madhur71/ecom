@@ -37,19 +37,25 @@
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                 </div>
-                <div class="buttonToBuy" (click)="thisType()">
+                <div class="buttonToBuy" (click)="thisType(product.name)">
                     See All =>
                 </div>
             </div>
         </div>
     </div>
     <div class="productListDiv" *ngIf="clicked">
-        <div class="productSubDiv">
+        <div class="productSubDiv" *ngFor="let product of productDatails;" >
             <div class="productListImage">
-                <img src="https://cdn.shopify.com/s/files/1/0584/4667/6158/products/atomichabits.png?v=1626257128">
+                <img src={{product.link}}>
             </div>
             <div>
-                <div>Specification</div>
+                <div>{{product.name}}</div>
+                <div>Rs {{product.price}} /-</div>
+                <h4>Specification</h4>
+                <ul *ngFor = "let s of product.discription">
+                     {{yesDoit(s)}} 
+                </ul>
+
             </div>
             <div class="buyNow">
                 <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
@@ -62,11 +68,6 @@
                     <button> Add To Cart </button> 
                     <button>Buy Now</button> 
                 </div>
-            </div>
-        </div>
-        <div class="productSubDiv">
-            <div class="productListImage">
-                <img src="https://cdn.shopify.com/s/files/1/0584/4667/6158/products/atomichabits.png?v=1626257128">
             </div>
         </div>
     </div>
