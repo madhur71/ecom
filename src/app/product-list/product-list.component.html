@@ -4,8 +4,8 @@
         <div *ngIf="!clicked">
             <h3>What Are You Looking For?</h3>
             <ul>
-                <li *ngFor="let product of productList;">
-                    <label> <input type="checkbox"> {{product.name}} </label>
+                <li *ngFor="let product of typeList;">
+                    <label> <input type="checkbox" (click)="addType(product)"> {{product}} </label>
                 </li>
             </ul>
         </div>
