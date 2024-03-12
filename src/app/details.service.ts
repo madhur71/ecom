@@ -13,7 +13,7 @@ export class DetailsService {
   constructor(private http:HttpClient) { }
 
   getDetails(type:string) : Observable<IDatails>{
-    this._url = "http://localhost:3000/" + type;
+    this._url = "https://my-json-server.typicode.com/madhur71/ecomserver/productDetails?category=" + type;
     return this.http.get<IDatails>(this._url);
   }
 
