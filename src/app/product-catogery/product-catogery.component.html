@@ -1,25 +1,29 @@
+<div (click)="backToAllType()" > <= Back To All Type</div>
 <div class="grid">
     <div class="Filters">
         <div>
-            <h3>What Are You Looking For?</h3>
+            <h3>Do You Need More Filter ?</h3>
             <ul>
-                <li *ngFor="let product of typeList;">
-                    <label> <input type="checkbox" (click)="addType(product)"> {{product}} </label>
+                <li>
+                    <label> <input type="checkbox"> price </label>
                 </li>
             </ul>
         </div>
     </div>
 <div class="body">
-    <div>
-        <div class="productSubDiv" *ngFor="let product of productList;">
+    <div class="productListDiv">
+        <div class="productSubDiv" *ngFor="let product of productDatails;" >
             <div class="productListImage">
                 <img src={{product.link}}>
             </div>
             <div>
-                <h3>Are You Looking For {{product.name}} ?</h3>
-                <h4>Check Our Most sold Product</h4>
-                <h5>Atomic Habits</h5>
-                <h5>price: 200rs</h5>
+                <div>{{product.name}}</div>
+                <div>Rs {{product.price}} /-</div>
+                <h4>Specification</h4>
+                <!-- <ul *ngFor = "let s of product.discription">
+                     {{yesDoit(s)}} 
+                </ul> -->
+
             </div>
             <div class="buyNow">
                 <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
@@ -28,8 +32,9 @@
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                 </div>
-                <div class="buttonToBuy" (click)="thisType(product.name)">
-                    See All =>
+                <div class="buttonToBuy">
+                    <button> Add To Cart </button> 
+                    <button>Buy Now</button> 
                 </div>
             </div>
         </div>

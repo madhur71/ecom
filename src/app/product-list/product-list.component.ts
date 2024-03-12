@@ -3,6 +3,7 @@ import { DetailsService } from '../details.service';
 import { ProductsInfoService } from '../products-info.service';
 import { ProductTypeListService } from '../product-type-list.service';
 import { IProduct } from '../productList';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -15,7 +16,7 @@ export class ProductListComponent implements OnInit {
   public productDatails:any;
   public clicked:boolean =false;
 
-  constructor(private _productInfoService: ProductsInfoService , private _detailsService : DetailsService , private productTypeListService: ProductTypeListService) { }
+  constructor(private _productInfoService: ProductsInfoService , private _detailsService : DetailsService , private productTypeListService: ProductTypeListService , private _Router:Router) { }
 
   ngOnInit(): void {
     this._productInfoService.getProducts().subscribe((data) => {
@@ -30,8 +31,7 @@ typeList:string[] = []
     this.clicked = false;
   }
   thisType(a:string){
-    this.clicked = true;
-    this._detailsService.getDetails(a).subscribe(data =>{ this.productDatails =data ;});
+    this._Router.navigate(['/ProductCatogery/'+ a],{})
   }
 
 
