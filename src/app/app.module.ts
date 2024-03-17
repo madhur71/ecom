@@ -8,6 +8,7 @@ import { ProductsInfoService } from './products-info.service';
 import { HeaderComponent } from './header/header.component';
 import { HomeComponent } from './home/home.component';
 import { ProductCatogeryComponent } from './product-catogery/product-catogery.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { ProductCatogeryComponent } from './product-catogery/product-catogery.co
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule,
     HttpClientModule
   ],

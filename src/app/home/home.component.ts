@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService } from '../carousel.service';
 import { ProductsInfoService } from '../products-info.service';
+import { Observable, debounceTime } from 'rxjs';
 
 
 @Component({
@@ -16,6 +17,8 @@ export class HomeComponent implements OnInit {
   public pro:any;
   public nth:number = 0;
   public bestSeller:any=[] 
+  search:any = '';
+  smartList = []
 
   constructor(private _carouselService: CarouselService , private _productInfoService: ProductsInfoService) { }
 
@@ -59,6 +62,13 @@ export class HomeComponent implements OnInit {
   scroll(){
     document.getElementById('scroll')?.scrollBy(300,0);
   }
-   
+
+  SearchByText(){
+    if(this.search != ''){
+      this._productInfoService.samrtSuggest(this.search).pipe(debounceTime(300)).subscribe((res)=>{
+        console.log(res)
+      })
+    }
+  }
   }
   

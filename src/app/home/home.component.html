@@ -1,6 +1,6 @@
 <div class="GlobalSearch">
     <div class="InputDiv">
-    <input type="text" placeholder="What Are You Searching For?">
+    <input type="text" [(ngModel)]="search" (ngModelChange)="SearchByText()" placeholder="What Are You Searching For?">
 </div>
 </div>
 
