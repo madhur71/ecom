@@ -1,36 +1,26 @@
-/* .body div{
-    display: flex;
-} */
-.Image{
-    width: 40%;
-}
-.Detail{
-    width: 60%;
-}
-.grid{
-    display: grid;
-    grid-template-columns: 30% 70%;
-}
 .Filters{
     background-color: aqua;
-    height: fit-content;
     position: sticky;
     top: 0px;
 }
 li{
     list-style: none;
 }
-.productListDiv{
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 30px;
-}
 .productSubDiv{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
     padding: 15px 0px 15px 0px;
     border-bottom: 1px solid;
+}
+.productListImage{
+    width: 200px;
+    height: 200px;
+}
+.productListImage img{
+    height: inherit;
+    width: 100%;
+    object-fit: contain;
+}
+.star{
+    width: 20px;
 }
 .productListImage{
     width: 200px;

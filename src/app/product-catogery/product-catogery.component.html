@@ -1,7 +1,8 @@
-<div (click)="backToAllType()" > <= Back To All Type</div>
-<div class="grid">
-    <div class="Filters">
-        <div>
+<!-- <div (click)="backToAllType()" > <= Back To All Type</div> -->
+<div class="web-container">
+    <div class="row"> 
+        <div class="col-sm-4">
+            <div class="Filters col">
             <h3>Do You Need More Filter ?</h3>
             <ul>
                 <li>
@@ -10,13 +11,12 @@
             </ul>
         </div>
     </div>
-<div class="body">
-    <div class="productListDiv">
-        <div class="productSubDiv" *ngFor="let product of productDatails;" >
-            <div class="productListImage">
+    <div class="col-sm-8">
+        <div class="productSubDiv row" *ngFor="let product of productDatails;" >
+            <div class="productListImage col-sm-4">
                 <img src={{product.link}}>
             </div>
-            <div>
+            <div class="col-sm-5">
                 <div>{{product.name}}</div>
                 <div>Rs {{product.price}} /-</div>
                 <h4>Specification</h4>
@@ -25,7 +25,7 @@
                 </ul>
 
             </div>
-            <div class="buyNow">
+            <div class="buyNow col-sm-3">
                 <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
