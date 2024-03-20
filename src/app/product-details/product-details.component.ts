@@ -20,5 +20,9 @@ export class ProductDetailsComponent implements OnInit {
       console.log(this.productDetail)
     })
   }
+  
+  objects(p:object){
+    return Object.keys(p)
+  }
 
 }
