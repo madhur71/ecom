@@ -1,5 +1,4 @@
 .Filters{
-    background-color: aqua;
     position: sticky;
     top: 0px;
 }
@@ -31,28 +30,6 @@ li{
     width: 100%;
     object-fit: contain;
 }
-.buyNow{
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-}
 .star{
     width: 20px;
-}
-.buttonToBuy {
-    justify-content: space-between;
-    display: flex;
-}
-.buttonToBuy button{
-    width: 45%;
-    color: white;
-    border: none;
-    height: 30px;
-    font-weight: bold;
-}
-.buttonToBuy button:nth-child(1){
-    background: black;
-}
-.buttonToBuy button:nth-child(2){
-    background: red;
 }

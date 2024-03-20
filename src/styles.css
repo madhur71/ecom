@@ -14,3 +14,8 @@ dl, ol, ul {
     margin-top: 0;
     margin-bottom: 0;
 }
+.button button {
+    width: 46%;
+    margin-left: 2%;
+    margin-right: 2%;
+}

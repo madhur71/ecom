@@ -2,7 +2,7 @@
 <div class="web-container">
     <div class="row"> 
         <div class="col-sm-4">
-            <div class="Filters col">
+            <div class="Filters col bg-info mt-2">
             <h3>Do You Need More Filter ?</h3>
             <ul>
                 <li>
@@ -16,26 +16,30 @@
             <div class="productListImage col-sm-4">
                 <img src={{product.link}}>
             </div>
-            <div class="col-sm-5">
+            <div class="col-sm-8 row">
+            <div class="col-sm-6">
                 <div>{{product.name}}</div>
                 <div>Rs {{product.price}} /-</div>
-                <h4>Specification</h4>
+                <!-- <h4>Specification</h4>
                 <ul *ngFor = "let s of objects(product.discription)">
                      {{s}} : {{product.discription[s]}}
-                </ul>
+                </ul> -->
 
             </div>
-            <div class="buyNow col-sm-3">
+            <div class="buyNow col-sm-6">
                 <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                         <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                 </div>
-                <div class="buttonToBuy">
-                    <button> Add To Cart </button> 
-                    <button>Buy Now</button> 
+            </div>
+            <div class="col-12">
+                <div class="button">
+                    <button class="btn btn-primary">Add To Cart</button> 
+                    <button class="btn btn-danger">Buy Now</button> 
                 </div>
+            </div>
             </div>
         </div>
     </div>
