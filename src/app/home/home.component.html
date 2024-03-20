@@ -1,6 +1,18 @@
 <div class="GlobalSearch">
-    <div class="InputDiv">
+    <div class="InputDiv position-relative">
     <input type="text" [(ngModel)]="search" (ngModelChange)="SearchByText()" placeholder="What Are You Searching For?">
+    <div class="zindex-10 container d-block position-absolute" *ngIf="serchResults.length > 0">
+        <div class="badge-dark p-1 border-bottom cursorPointer row" *ngFor="let res of serchResults;" >
+            <div class="col-8">
+                <div>Product</div> 
+                <div>{{res.name}}</div> 
+            </div>
+            <div class="col-4">
+                <div>category</div>
+                <div>{{res.category}}</div>
+            </div>
+        </div>
+    </div>
 </div>
 </div>
 

@@ -63,11 +63,14 @@ export class HomeComponent implements OnInit {
     document.getElementById('scroll')?.scrollBy(300,0);
   }
 
+  serchResults:any= []
   SearchByText(){
     if(this.search != ''){
       this._productInfoService.samrtSuggest(this.search).pipe(debounceTime(300)).subscribe((res)=>{
-        console.log(res)
+        this.serchResults = res
       })
+    }else{
+      this.serchResults = []
     }
   }
   }
