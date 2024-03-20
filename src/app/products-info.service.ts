@@ -9,14 +9,16 @@ import { IDatails } from 'src/details';
 })
 export class ProductsInfoService {
 
-  private _url: string = "https://my-json-server.typicode.com/madhur71/ecomserver/products"
+  private _url: string = ""
 
   constructor(private http:HttpClient) { }
 
   getProducts(): Observable<IProduct>{
+    this._url = 'https://my-json-server.typicode.com/madhur71/ecomserver/products'
     return this.http.get<IProduct>(this._url);
   }
   postProduct(product: IProduct):Observable<IProduct>{
+    this._url = 'https://my-json-server.typicode.com/madhur71/ecomserver/products'
     return this.http.post<IProduct>(this._url,product);
   } 
 
