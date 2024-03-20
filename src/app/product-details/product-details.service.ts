@@ -10,7 +10,7 @@ export class ProductDetailsService {
   constructor(private http:HttpClient) { }
 
   getProductById(type:string) : Observable<IDatails>{
-    let _url = "https://my-json-server.typicode.com/madhur71/ecomserver/productDetails?id=" + type;
+    let _url = "https://my-json-server.typicode.com/madhur71/ecomserver/productDetails/" + type + "?_embed=ProductReview";
     return this.http.get<IDatails>(_url);
   }
 }
