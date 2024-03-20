@@ -7,6 +7,9 @@
     </div>
     <div class="col-sm-6">
         <div>
+            Rating
+        </div>
+        <div>
             <h5>Specification</h5>
                 <ul >
                    <li *ngFor = "let s of objects(productDetail.discription)" > 
@@ -16,7 +19,7 @@
         </div>
         <div>
             <h5>Price</h5>
-            {{productDetail.price}}
+            Rs {{productDetail.price}}/-
         </div>
         <div class="row">
             <div class="col-sm-12 button">
@@ -27,7 +30,10 @@
 
         <div>
             <h5>Reviews</h5>
-            {{productDetail.price}}
+            <div class="row"  *ngFor = "let s of productDetail.ProductReview">
+                <div class="col-6">Review By : {{s.userName}}</div><div class="col-6">Rating : {{s.rating}}</div>
+                <div class="col-12">{{s.review}}</div>
+            </div>
         </div>
     </div>
 </div>
