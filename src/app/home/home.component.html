@@ -2,13 +2,13 @@
     <div class="InputDiv position-relative">
     <input type="text" [(ngModel)]="search" (ngModelChange)="SearchByText()" placeholder="What Are You Searching For?">
     <div class="zindex-10 container d-block position-absolute" *ngIf="serchResults.length > 0 && search.length > 0">
-        <div class="badge-dark p-1 border-bottom cursorPointer row" *ngFor="let res of serchResults;" >
+        <div class="badge-dark p-1 border-bottom cursorPointer row" *ngFor="let res of serchResults;" (click)="openProduct(res)">
             <div class="col-8">
-                <div>Product</div> 
+                <div><b>Product</b></div> 
                 <div>{{res.name}}</div> 
             </div>
             <div class="col-4">
-                <div>category</div>
+                <div><b>category</b></div>
                 <div>{{res.category}}</div>
             </div>
         </div>

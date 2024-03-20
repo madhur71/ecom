@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { CarouselService } from '../carousel.service';
 import { ProductsInfoService } from '../products-info.service';
-import { Observable, debounceTime } from 'rxjs';
+import { debounceTime } from 'rxjs';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -20,7 +21,7 @@ export class HomeComponent implements OnInit {
   search:any = '';
   smartList = []
 
-  constructor(private _carouselService: CarouselService , private _productInfoService: ProductsInfoService) { }
+  constructor(private _carouselService: CarouselService , private _productInfoService: ProductsInfoService , private _Router:Router) { }
 
   ngOnInit(): void {
     this._carouselService.getProducts().subscribe(data => {this.carousel =  data;
@@ -72,6 +73,12 @@ export class HomeComponent implements OnInit {
     }else{
       this.serchResults = []
     }
+  }
+
+
+  openProduct(res:any){
+    console.log(res)
+    this._Router.navigate(['/ProductDetails/'+ res.category + "/" + res.id],{})
   }
   }
   
