@@ -62,3 +62,14 @@ img{
 .scroll{
     overflow-x: scroll;
 }
+
+.ProImg{
+    height: 250px;
+    object-fit: cover;
+}
+@media (min-width: 576px) {
+    .ProImg{
+        height: 100%;
+        object-fit: cover;
+    }
+  }
