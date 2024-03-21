@@ -18,13 +18,8 @@
             </div>
             <div class="col-sm-8 row">
             <div class="col-sm-6">
-                <div>{{product.name}}</div>
+                <h4 class="link" (click)="openProduct(product)" >{{product.name}}</h4>
                 <div>Rs {{product.price}} /-</div>
-                <!-- <h4>Specification</h4>
-                <ul *ngFor = "let s of objects(product.discription)">
-                     {{s}} : {{product.discription[s]}}
-                </ul> -->
-
             </div>
             <div class="buyNow col-sm-6">
                 <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>

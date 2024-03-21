@@ -22,6 +22,15 @@ dl, ol, ul {
 img{
     width: 100%;
 }
+
+.link{
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+.link:hover{
+    color: #DA291C;
+}
 /* width */
 ::-webkit-scrollbar {
     width: 2px;

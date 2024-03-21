@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DetailsService } from '../details.service';
-import { ActivatedRoute } from '@angular/router';
-import { Route } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-catogery',
@@ -11,7 +10,7 @@ import { Route } from '@angular/router';
 export class ProductCatogeryComponent implements OnInit {
 
 
-  constructor(private _detailsService : DetailsService, private _ActivatedRoute: ActivatedRoute  ) { }
+  constructor(private _detailsService : DetailsService, private _ActivatedRoute: ActivatedRoute ,private  _Router:Router) { }
 
   productDatails:any;
 
@@ -25,5 +24,8 @@ export class ProductCatogeryComponent implements OnInit {
 
   objects(p:object){
     return Object.keys(p)
+  }
+  openProduct(res:any){
+    this._Router.navigate(['/ProductDetails/'+ res.category + "/" + res.id],{})
   }
 }
