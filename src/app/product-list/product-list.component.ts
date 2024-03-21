@@ -19,12 +19,14 @@ export class ProductListComponent implements OnInit {
   constructor(private _productInfoService: ProductsInfoService , private _detailsService : DetailsService , private productTypeListService: ProductTypeListService , private _Router:Router) { }
 
   ngOnInit(): void {
-    this._productInfoService.getProducts().subscribe((data) => {
-      this.productList = data
-      this.productList.forEach((e:IProduct)=>{
+    this._productInfoService.getProducts().subscribe((data:any) => {
+      data.forEach((e:IProduct)=>{
         this.typeList.push(e.name)
       })
   })
+    this._productInfoService.getBestSallerProducts().subscribe((data) => {
+      this.productList = data
+    })
 }
 typeList:string[] = []
   backToAllType(){

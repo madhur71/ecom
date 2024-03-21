@@ -17,6 +17,10 @@ export class ProductsInfoService {
     this._url = 'https://my-json-server.typicode.com/madhur71/ecomserver/products'
     return this.http.get<IProduct>(this._url);
   }
+  getBestSallerProducts(): Observable<IProduct>{
+    this._url = 'https://my-json-server.typicode.com/madhur71/ecomserver/productDetails?BestSeller=true'
+    return this.http.get<IProduct>(this._url);
+  }
   postProduct(product: IProduct):Observable<IProduct>{
     this._url = 'https://my-json-server.typicode.com/madhur71/ecomserver/products'
     return this.http.post<IProduct>(this._url,product);
