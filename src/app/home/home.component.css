@@ -1,12 +1,3 @@
-.GlobalSearch{
-    width: 100%;
-}
-.GlobalSearch .InputDiv{
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 10px;
-}
 input[type=text]{
     width: 100%;
     height: 35px;
@@ -64,8 +55,10 @@ img{
 }
 .flex{
     display: flex;
-    overflow-x: hidden;
 }
-.flex div{
-    width: 25%;
+.scrollImg img {
+    width: 379px !important;
+}
+.scroll{
+    overflow-x: scroll;
 }
