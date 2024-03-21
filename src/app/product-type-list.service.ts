@@ -8,12 +8,12 @@ import { IProductType } from './productTypeList';
 })
 export class ProductTypeListService {
 
-  private _url: string = "https://my-json-server.typicode.com/madhur71/ecomserver/products"
+  private _url: string = "https://my-json-server.typicode.com/madhur71/ecomserver/productDetails"
 
   constructor(private http:HttpClient) { }
 
   getProductTypeList( type:String ): Observable<IProductType>{
-    let link = this._url + type;
+    let link = this._url + type + 'BestSeller=true';
     return this.http.get<IProductType>(link)
   }
 }

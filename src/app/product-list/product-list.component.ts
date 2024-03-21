@@ -4,6 +4,7 @@ import { ProductsInfoService } from '../products-info.service';
 import { ProductTypeListService } from '../product-type-list.service';
 import { IProduct } from '../productList';
 import { Router } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -12,21 +13,30 @@ import { Router } from '@angular/router';
 })
 export class ProductListComponent implements OnInit {
 
-  public productList:any;
+  public productList:any =[];
   public productDatails:any;
   public clicked:boolean =false;
 
-  constructor(private _productInfoService: ProductsInfoService , private _detailsService : DetailsService , private productTypeListService: ProductTypeListService , private _Router:Router) { }
+  constructor(private _productInfoService: ProductsInfoService , private _detailsService : DetailsService , private productTypeListService: ProductTypeListService , private _Router:Router , private _ActivatedRoute:ActivatedRoute) {   }
 
   ngOnInit(): void {
+    var p = ''
+    this._ActivatedRoute.queryParams.forEach((e:any)=>{
+      p = e.type
+    })
+    this.typeSelected.push(p)
+
     this._productInfoService.getProducts().subscribe((data:any) => {
       data.forEach((e:IProduct)=>{
         this.typeList.push(e.name)
       })
   })
+  if(p){
+    this.getSelectedProductType()
+  }else{
     this._productInfoService.getBestSallerProducts().subscribe((data) => {
       this.productList = data
-    })
+    })}
 }
 typeList:string[] = []
   backToAllType(){
@@ -76,13 +86,15 @@ addType(ele : string){
 getSelectedProductType(){
   let type = "?"
   this.typeSelected.forEach((e)=>{
-    type = type + "name="+e + "&"
+    type = type + "category="+e + "&"
   })
   console.log(type)
   this.productTypeListService.getProductTypeList(type).subscribe((data)=>{
     console.log(data)
     this.productList = data
   })
-}
-
+  }
+  checkedType(product:any){
+    return this.typeSelected.includes(product)
+  }
 }

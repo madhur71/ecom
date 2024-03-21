@@ -65,10 +65,14 @@ export class HomeComponent implements OnInit {
   }
 
   serchResults:any= []
+  SearchResultsCatogery:any = []
   SearchByText(){
     if(this.search != ''){
       this._productInfoService.samrtSuggest(this.search).pipe(debounceTime(300)).subscribe((res)=>{
         this.serchResults = res
+      })
+      this._productInfoService.samrtSuggestCatogery(this.search).subscribe((data:any) => {
+        this.SearchResultsCatogery = data
       })
     }else{
       this.serchResults = []
@@ -77,8 +81,11 @@ export class HomeComponent implements OnInit {
 
 
   openProduct(res:any){
-    console.log(res)
-    this._Router.navigate(['/ProductDetails/'+ res.category + "/" + res.id],{})
-  }
+      this._Router.navigate(['/ProductDetails/'+ res.category + "/" + res.id],{})
+    }
+
+  openProductCatogery(res:any){
+      this._Router.navigate(['/ProductCatogery/' + res.name ], {} )
+    }
   }
   

@@ -30,4 +30,8 @@ export class ProductsInfoService {
     this._url = "https://my-json-server.typicode.com/madhur71/ecomserver/productDetails?name_like=^" + type;
     return this.http.get<IDatails>(this._url);
   }
+  samrtSuggestCatogery(type:string): Observable<IProduct>{
+    this._url = 'https://my-json-server.typicode.com/madhur71/ecomserver/products?name_like=^' + type;
+    return this.http.get<IProduct>(this._url);
+  }
 }

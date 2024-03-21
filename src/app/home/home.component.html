@@ -1,7 +1,7 @@
 <div class="GlobalSearch">
     <div class="InputDiv position-relative">
     <input type="text" [(ngModel)]="search" (ngModelChange)="SearchByText()" placeholder="What Are You Searching For?">
-    <div class="zindex-10 container d-block position-absolute" *ngIf="serchResults.length > 0 && search.length > 0">
+    <div class="zindex-10 container d-block position-absolute" *ngIf="(serchResults.length > 0 || SearchResultsCatogery.length > 0)&& search.length > 0">
         <div class="badge-dark p-1 border-bottom cursorPointer row" *ngFor="let res of serchResults;" (click)="openProduct(res)">
             <div class="col-8">
                 <div><b>Product</b></div> 
@@ -10,6 +10,12 @@
             <div class="col-4">
                 <div><b>category</b></div>
                 <div>{{res.category}}</div>
+            </div>
+        </div>
+        <div class="badge-dark p-1 border-bottom cursorPointer row" *ngFor="let res of SearchResultsCatogery;" (click)="openProductCatogery(res)">
+            <div class="col-4">
+                <div><b>category</b></div>
+                <div>{{res.name}}</div>
             </div>
         </div>
     </div>
@@ -31,7 +37,6 @@
     <h2>Best Seller Products</h2>
     <div class="flex" id="scroll">
     <div *ngFor="let product of bestSeller;">
-        <!-- ng-if={{product.BestSeller}} -->
             <img  style="width:-webkit-fill-available;" src={{product.link}}>
     </div>
     
