@@ -4,8 +4,10 @@ import { HomeComponent } from './home/home.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductCatogeryComponent } from './product-catogery/product-catogery.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  { path: '', component: LoginComponent },
   { path: 'home', component: HomeComponent },
   { path: 'ProductList', component: ProductListComponent },
   { path: 'ProductCatogery/:product', component: ProductCatogeryComponent },

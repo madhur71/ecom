@@ -10,6 +10,8 @@ import { HomeComponent } from './home/home.component';
 import { ProductCatogeryComponent } from './product-catogery/product-catogery.component';
 import { FormsModule } from '@angular/forms';
 import { ProductDetailsComponent } from './product-details/product-details.component';
+import { LoginComponent } from './login/login.component';
+import { CartComponent } from './login/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { ProductDetailsComponent } from './product-details/product-details.compo
     HeaderComponent,
     HomeComponent,
     ProductCatogeryComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    LoginComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,

@@ -2,13 +2,14 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IProductType } from './productTypeList';
+import { environment } from './environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductTypeListService {
 
-  private _url: string = "https://my-json-server.typicode.com/madhur71/ecomserver/productDetails"
+  private _url: string = environment.url + "/productDetails"
 
   constructor(private http:HttpClient) { }
 
