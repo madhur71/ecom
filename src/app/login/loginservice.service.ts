@@ -21,7 +21,7 @@ export class LoginserviceService {
   }
 
   addUser(login:any):any{
-    this._url = "http://localhost:3000/logInDetails"
+    this._url =  environment.url + "/logInDetails"
     return this.http.post<logInObj>(this._url,login);
   } 
 
