@@ -41,4 +41,13 @@ export class LoginComponent implements OnInit {
     })
   }
 
+  loginAccount(){
+    console.log('Login')
+    this._loginserviceService.loginUser(this.email,this.password).subscribe((res:any)=>{
+      if(res.length){
+        this._loginserviceService.setLogin()
+      }
+    })
+  }
+
 }

@@ -15,15 +15,22 @@ export class LoginserviceService {
   setLogin(){
     let loginObject = {
       Name : "Madhur Kamble",
-      userId : "219",
+      userId : "1",
     }
-    localStorage.setItem( JSON.stringify(loginObject) ,"logedInUser")
+    localStorage.setItem( "logedInUser",JSON.stringify(loginObject))
+  }
+  setLogout(){
+    localStorage.removeItem("logedInUser")
   }
 
   addUser(login:any):any{
     this._url =  environment.url + "/logInDetails"
     return this.http.post<logInObj>(this._url,login);
   } 
+  loginUser(email:any,Password:any){
+    this._url =  environment.url + "/logInDetails?eamil="+ email +"&&Password=" + Password
+    return this.http.get<logInObj>(this._url);
+  }
 
 }
 

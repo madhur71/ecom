@@ -1,11 +1,18 @@
-
-.sub{
-    width: 60%;
-    padding: 15px 0px;
-    margin-left: auto;
-    margin-right: auto;
+.HeaderBody{
+    background-color: grey;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
-.grid{
-    display: grid;
-    grid-template-columns: 33% 33% 33%;
+.list{
+    display: flex;
+}
+.list div{
+    padding: 15px;
+    font-size: 20px;
+}
+.active{
+    background-color: black;
+    color: white;
+    font-weight: bolder;
 }

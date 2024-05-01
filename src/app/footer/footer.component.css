@@ -1,0 +1,11 @@
+
+.sub{
+    width: 60%;
+    padding: 15px 0px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.grid{
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+}

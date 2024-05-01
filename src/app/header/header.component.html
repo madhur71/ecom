@@ -1,35 +1,16 @@
-<div class="bg-dark text-light row m-0 justify-content-around">
-    <div class="col-sm-7 col-12 p-3">
-        <div>
-            <div>We are also available on Mobile Application</div>
-        </div>
-        <div class="grid">
-            <div>
-                <h4>Connect</h4>
-                <ul>
-                    <li><a href="https://www.facebook.com/madhur.kamble.9">Facebook</a></li>
-                    <li><a href="https://www.instagram.com/madhur_.7/">Instagram</a></li>
-                    <li><a href="https://twitter.com/madhurkamble7/">Twitter</a></li>
-                </ul>
-            </div>
-            <div>
-                <h4>Location</h4>
-                <ul>
-                    <li>Nagpur</li>
-                    <li>Pune</li>
-                </ul>
-            </div>
-            <div>
-                <h4>Support</h4>
-                <ul>
-                    <li>Terms And Conditions</li>
-                    <li>Cookies</li>
-                    <li>Privicy</li>
-                </ul>
-            </div>
-        </div>
-        <div>
-            <div>@2022 Dummy Ecommerse Website</div>
+<div class="HeaderBody">
+    <div class="list">
+        <div class="cursorPointer" routerLink="/home" activatedRoutes [routerLinkActive]="'active'" >Home</div>
+        <div class="cursorPointer" routerLink="/ProductList" [routerLinkActive]="'active'">Products</div>
+        <div class="cursorPointer" routerLink="/about" [routerLinkActive]="'active'">About Us</div>
+    </div>
+    <div class="list">
+        <div *ngIf="loginIt" (click)="logOut()" routerLink="">sign out</div>
+        <div *ngIf="!loginIt" class="active">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-fill" viewBox="0 0 16 16">
+                <path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6"/>
+            </svg>
+          <span> Madhur Kamble </span>
         </div>
     </div>
 </div>

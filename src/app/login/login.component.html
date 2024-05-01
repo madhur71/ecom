@@ -2,29 +2,29 @@
     <form *ngIf="!signIn">
         <div class="form-group">
             <label for="exampleInputEmail1">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+            <input type="email" class="form-control" id="exampleInputEmail1" name="email" [(ngModel)]="email" aria-describedby="emailHelp" placeholder="Enter email">
             <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
         </div>
         <div class="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+            <label for="exampleInputPassword">Password</label>
+            <input type="password" class="form-control" id="exampleInputPassword1" name="passw" [(ngModel)]="password" placeholder="Password">
         </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="btn btn-primary" (click)="loginAccount()"> Submit</button>
         <button class="btn btn-danger" (click)="signInAccount()">Sign in</button>
   </form>
   <form *ngIf="signIn">
     <div class="form-group">
         <label for="exampleInputEmail1" >Name</label>
-        <input type="email" class="form-control" id="Name" placeholder="Enter Name" [ngModel]="Name" >
+        <input type="email" class="form-control" id="Name" name="na" placeholder="Enter Name" [(ngModel)]="Name" >
     </div>
     <div class="form-group">
         <label for="exampleInputEmail1">Email address</label>
-        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" [ngModel]="email" placeholder="Enter email">
+        <input type="email" class="form-control" id="exampleInputEmail1" name="e" aria-describedby="emailHelp" [(ngModel)]="email" placeholder="Enter email">
         <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
         <label for="exampleInputPassword1">Password</label>
-        <input type="password" class="form-control" id="exampleInputPassword1" [ngModel]="password" placeholder="Password">
+        <input type="password" class="form-control" name="p" id="exampleInputPassword1" [(ngModel)]="password" placeholder="Password">
     </div>
     <button type="submit" class="btn btn-primary" (click)="AddAccount()">Submit</button>
     <button class="btn btn-danger" (click)="signOutAccount()">Log In</button>
