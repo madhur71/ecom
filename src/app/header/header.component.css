@@ -16,3 +16,9 @@
     color: white;
     font-weight: bolder;
 }
+
+@media (max-width: 576px) {
+    .NoMobile{
+        display: none;
+    }
+}
