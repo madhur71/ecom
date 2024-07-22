@@ -24,7 +24,9 @@ export class ProductListComponent implements OnInit {
     this._ActivatedRoute.queryParams.forEach((e:any)=>{
       p = e.type
     })
-    this.typeSelected.push(p)
+    if(p){
+      this.typeSelected.push(p)
+    }
 
     this._productInfoService.getProducts().subscribe((data:any) => {
       data.forEach((e:IProduct)=>{
