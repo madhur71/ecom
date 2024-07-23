@@ -7,7 +7,17 @@
     </div>
     <div class="col-sm-6">
         <div>
-            Rating
+            <div class="d-flex">
+                <h5>Rating :</h5>   <span>{{productDetail.star}}</span>
+            <div class="starContainer" >  
+                <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
+                <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                <div class="starHider" [ngStyle]="{'width': ((5-productDetail.star)*20) + 'px'}"  >  </div>
+            </div>
+            </div>
         </div>
         <div>
             <h5>Specification</h5>

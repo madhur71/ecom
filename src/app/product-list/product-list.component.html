@@ -22,12 +22,16 @@
                         <h6>price: Rs {{product.price}}/-</h6>
                     </div>
                     <div class="d-flex flex-column justify-content-between col-sm-3 col-6 absolute">
-                        <div>  
+                        <div class="d-flex">
+                            <span>{{product.star}}</span>
+                        <div class="starContainer" >  
                             <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
                             <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                             <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                             <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
                             <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                            <div class="starHider" [ngStyle]="{'width': ((5-product.star)*20) + 'px'}"  >  </div>
+                        </div>
                         </div>
                         <div class="cursorPointer link" (click)="thisType(product.category)">
                             See All 

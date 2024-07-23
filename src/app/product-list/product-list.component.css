@@ -18,9 +18,6 @@ li{
     width: 100%;
     object-fit: contain;
 }
-.star{
-    width: 20px;
-}
 
 @media (max-width: 576px) {
     .absolute{

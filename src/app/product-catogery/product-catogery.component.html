@@ -22,11 +22,16 @@
                 <div>Rs {{product.price}} /-</div>
             </div>
             <div class="buyNow col-sm-6">
-                <div>   <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
-                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
-                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
-                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
-                        <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                <div class="d-flex">
+                    <span>{{product.star}}</span>
+                <div class="starContainer" >  
+                    <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span>
+                    <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                    <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                    <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                    <span><img class="star" src="https://www.pngmart.com/files/16/Gold-Star-PNG-Transparent-Image.png"></span> 
+                    <div class="starHider" [ngStyle]="{'width': ((5-product.star)*20) + 'px'}"  >  </div>
+                </div>
                 </div>
             </div>
             <div class="col-12">

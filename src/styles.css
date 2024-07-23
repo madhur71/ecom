@@ -46,3 +46,17 @@ img{
   ::-webkit-scrollbar-thumb {
     background: gray; 
   }
+  .star{
+    width: 20px;
+}
+.starContainer{
+    width: max-content;
+    position: relative;
+}
+.starHider{
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: white;
+    height: 26px;
+}

@@ -49,30 +49,6 @@ typeList:string[] = []
   }
 
 
-  yesDoit(s:any){
-    console.log("One One")
-
-    let p = "";
-
-    Object.keys(s).forEach(function(key) {
-
-
-      p = `
-      
-      ${p} 
-
-      ${key} : ${s[key]}
-      
-
-      `
-      
-
-
-    
-    });
-  console.log(p)
-    return p;
-  }
 typeSelected:string[] = []
 addType(ele : string){
   let index = this.typeSelected.indexOf(ele)
